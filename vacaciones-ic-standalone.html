@@ -169,21 +169,21 @@
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Matrícula</label>
                       <input
+                      id="matriculaInput" 
                         type="text"
-                        value={loginMatricula}
+                       value={loginMatricula}
                         onChange={(e) => setLoginMatricula(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-lg"
-                        placeholder="Ej: 40900"
-                        required
-                      />
-                    </div>
+                      className="w-full px-4 py-3 border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-lg"
+                       placeholder="Ej: 40900"
+                     required
+                   />
                     {loginError && (
                       <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
                         {loginError}
                       </div>
                     )}
                     <button
-                      type="submit"
+                     id="ingresarBtn"
                       className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 shadow-md text-lg"
                     >
                       Ingresar
