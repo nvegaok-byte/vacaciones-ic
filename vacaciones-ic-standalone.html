@@ -479,7 +479,20 @@
 
   // 4. Inicializa Firebase
   const app = firebase.initializeApp(firebaseConfig)
-  const db = app.firestore();
-  // ¡Ahora Firebase está conectado!
+  const db = firebase.firestore()
+// AÑADE ESTE BLOQUE COMPLETO AQUÍ (Líneas 483 en adelante):
+db.collection("vacaciones").add({
+    destino: "París, Francia",
+    fechaInicio: "2025-07-15",
+    dias: 7,
+    activa: true
+})
+.then((docRef) => {
+    console.log("Documento escrito con ID: ", docRef.id);
+})
+.catch((error) => {
+    console.error("Error al añadir documento: ", error);
+});
+// FIN del bloque a añadir
 
 </script>
