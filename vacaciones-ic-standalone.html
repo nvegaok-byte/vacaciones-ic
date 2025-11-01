@@ -464,7 +464,7 @@
         ReactDOM.render(<VacationDashboard />, document.getElementById('root'));
     </script>
 </body></html>
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script> <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
 
 <script>
   // 3. TU CONFIGURACIÓN DE PROYECTO ÚNICA
@@ -478,8 +478,8 @@
   };
 
   // 4. Inicializa Firebase
-  const app = firebase.initializeApp(firebaseConfig);
-  
+  const app = firebase.initializeApp(firebaseConfig)
+  const db = app.firestore();
   // ¡Ahora Firebase está conectado!
 
 </script>
