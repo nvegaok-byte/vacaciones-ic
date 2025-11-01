@@ -480,5 +480,31 @@
   // 4. Inicializa Firebase
   const app = firebase.initializeApp(firebaseConfig)
   const db = firebase.firestore()
+// FUNCIÓN PARA GUARDAR LA MATRÍCULA EN FIRESTORE
+function guardarMatricula() {
+  // 1. Obtener el valor del campo de matrícula
+  const matricula = document.getElementById('matriculaInput').value;
 
+  if (matricula) {
+    // 2. Usar Firestore para guardar el dato
+    db.collection("matriculas").add({
+      matricula: matricula,
+      fechaIngreso: new Date() // Guarda la fecha y hora actual
+    })
+    .then(() => {
+      console.log("Matrícula guardada con éxito:", matricula);
+      // Aquí podrías redirigir al usuario o limpiar el campo
+      alert(`Matrícula ${matricula} registrada.`); 
+    })
+    .catch((error) => {
+      console.error("Error al guardar la matrícula:", error);
+      alert("Error al registrar la matrícula. Revisa la consola.");
+    });
+  } else {
+    alert("Por favor, ingresa una matrícula.");
+  }
+}
+
+// 3. ASIGNAR LA FUNCIÓN AL BOTÓN 'INGRESAR'
+document.getElementById('ingresarBtn').addEventListener('click', guardarMatricula);
 </script>
